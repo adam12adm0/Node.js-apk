@@ -1,0 +1,21 @@
+<%- include('layout', {title: 'الصفحة الرئيسية'}); %>
+
+<h2>مرحبًا بك في تطبيق تعلم بايثون</h2>
+
+<section class="progress">
+    <h3>تقدمك</h3>
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: 30%;"></div>
+    </div>
+    <p>لقد أكملت 30% من الدورة</p>
+</section>
+
+<section class="lessons">
+    <h3>الدروس</h3>
+    <ul>
+        <% for(let i = 1; i <= 10; i++) { %>
+            <li><a href="/lesson/<%= i %>">الدرس <%= i %></a></li>
+        <% } %>
+    </ul>
+</section>
+
