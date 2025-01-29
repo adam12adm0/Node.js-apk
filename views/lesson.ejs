@@ -1,0 +1,43 @@
+<%- include('layout', {title: `الدرس ${lessonId}`}); %>
+
+<h2>الدرس <%= lessonId %></h2>
+
+<section class="lesson-content">
+    <!-- هنا يمكنك إضافة محتوى الدرس -->
+</section>
+
+<section class="examples">
+    <h3>الأمثلة</h3>
+    <div class="example">
+        <h4>مثال 1</h4>
+        <pre><code class="python">
+print("مرحبا بالعالم!")
+        </code></pre>
+    </div>
+</section>
+
+<section class="code-editor">
+    <h3>جرب بنفسك</h3>
+    <textarea id="code-area">
+# اكتب الكود الخاص بك هنا
+print("مرحبا بالعالم!")
+    </textarea>
+    <button id="run-code">تشغيل الكود</button>
+    <div id="output"></div>
+</section>
+
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code-area"), {
+        mode: "python",
+        lineNumbers: true,
+        theme: "default"
+    });
+
+    document.getElementById("run-code").addEventListener("click", function() {
+        var code = editor.getValue();
+        // هنا يمكنك إرسال الكود إلى الخادم لتنفيذه
+        // وعرض النتيجة في عنصر الإخراج
+        document.getElementById("output").innerText = "نتيجة تنفيذ الكود ستظهر هنا";
+    });
+</script>
+
